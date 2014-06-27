@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.emf.fcompare.core/src" modelPluginID="org.eclipse.emf.fcompare.core"
+    modelName="Fcompare" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>fcompare.ecore</foreignModel>
+  <genPackages prefix="fcomapre" basePackage="org.eclipse.emf.fcompare.core" disposableProviderFactory="true"
+      ecorePackage="fcompare.ecore#/" publicationLocation="">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fcompare.ecore#//DiffType">
+      <genEnumLiterals ecoreEnumLiteral="fcompare.ecore#//DiffType/DIFFERENCE"/>
+      <genEnumLiterals ecoreEnumLiteral="fcompare.ecore#//DiffType/CONFLICT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fcompare.ecore#//DiffStatus">
+      <genEnumLiterals ecoreEnumLiteral="fcompare.ecore#//DiffStatus/MERGED"/>
+      <genEnumLiterals ecoreEnumLiteral="fcompare.ecore#//DiffStatus/UNMERGED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fcompare.ecore#//DiffOrigin">
+      <genEnumLiterals ecoreEnumLiteral="fcompare.ecore#//DiffOrigin/LEFT"/>
+      <genEnumLiterals ecoreEnumLiteral="fcompare.ecore#//DiffOrigin/RIGHT"/>
+    </genEnums>
+    <genClasses ecoreClass="fcompare.ecore#//Diff">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fcompare.ecore#//Diff/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fcompare.ecore#//Diff/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fcompare.ecore#//Diff/left"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fcompare.ecore#//Diff/right"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fcompare.ecore#//Diff/parent"/>
+      <genOperations ecoreOperation="fcompare.ecore#//Diff/merge">
+        <genParameters ecoreParameter="fcompare.ecore#//Diff/merge/side"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="fcompare.ecore#//DiffEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fcompare.ecore#//DiffEntry/origin"/>
+    </genClasses>
+    <genClasses ecoreClass="fcompare.ecore#//FEngine">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fcompare.ecore#//FEngine/differences"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fcompare.ecore#//FEngine/strategy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fcompare.ecore#//FEngine/left"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fcompare.ecore#//FEngine/right"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fcompare.ecore#//FEngine/parent"/>
+      <genOperations ecoreOperation="fcompare.ecore#//FEngine/compute"/>
+      <genOperations ecoreOperation="fcompare.ecore#//FEngine/merge">
+        <genParameters ecoreParameter="fcompare.ecore#//FEngine/merge/differences"/>
+        <genParameters ecoreParameter="fcompare.ecore#//FEngine/merge/side"/>
+      </genOperations>
+      <genOperations ecoreOperation="fcompare.ecore#//FEngine/rollBack"/>
+      <genOperations ecoreOperation="fcompare.ecore#//FEngine/commit"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="fcompare.ecore#//DiffStrategy">
+      <genOperations ecoreOperation="fcompare.ecore#//DiffStrategy/compute"/>
+    </genClasses>
+    <genClasses ecoreClass="fcompare.ecore#//EagerStrategy"/>
+    <genClasses ecoreClass="fcompare.ecore#//LazyStrategy"/>
+  </genPackages>
+</genmodel:GenModel>

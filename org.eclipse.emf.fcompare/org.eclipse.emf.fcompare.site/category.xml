@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.emf.fcompare.feature_0.0.0.jar" id="org.eclipse.emf.fcompare.feature" version="0.0.0">
+    <category name="org.eclipse.emf.fcompare"/>
+   </feature>
+   <feature url="features/org.eclipse.emf.fcompare.feature.source_0.0.0.jar" id="org.eclipse.emf.fcompare.feature.source" version="0.0.0">
+    <category name="org.eclipse.emf.fcompare Developer Resources"/>
+   </feature>
+</site>
